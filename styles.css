@@ -103,10 +103,13 @@ details>summary::-webkit-details-marker {
 
 /* --- Animación de Latido Neón (Pulse Glow) --- */
 @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 10px rgba(173, 0, 255, 0.1);
         border-color: rgba(173, 0, 255, 0.3);
     }
+
     50% {
         box-shadow: 0 0 25px rgba(173, 0, 255, 0.7), inset 0 0 10px rgba(173, 0, 255, 0.2);
         border-color: rgba(173, 0, 255, 0.8);
@@ -115,4 +118,37 @@ details>summary::-webkit-details-marker {
 
 .animate-pulse-glow {
     animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Soporte para volteo táctil y corrección de inversión de texto */
+.bento-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.bento-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.bento-card-front,
+.bento-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.bento-card-back {
+    transform: rotateY(180deg);
+}
+
+.perspective-1000 {
+    perspective: 1000px;
 }

@@ -41,25 +41,6 @@
     }
   </script>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Soporte para volteo táctil en móviles */
-    .bento-card-inner.is-flipped {
-      transform: rotateY(180deg);
-    }
-
-    .perspective-1000 {
-      perspective: 1000px;
-    }
-
-    .transform-style-3d {
-      transform-style: preserve-3d;
-    }
-
-    .backface-hidden {
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-  </style>
 </head>
 
 <body class="antialiased min-h-screen flex flex-col items-center overflow-x-hidden">
@@ -240,7 +221,8 @@
         <div class="bento-card group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-2">
           <div
             class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-            <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
+            <!-- Cara Frontal -->
+            <div class="bento-card-front p-[2px]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0">
               </div>
@@ -257,8 +239,8 @@
                   herramientas y caminos… y no saber cuál elegir me termina frenando.</p>
               </div>
             </div>
-            <div
-              class="absolute inset-0 backface-hidden rotate-y-180 rounded-[2rem] overflow-hidden p-[2px] shadow-[0_0_30px_rgba(14,218,234,0.2)]">
+            <!-- Cara Trasera -->
+            <div class="bento-card-back p-[2px] shadow-[0_0_30px_rgba(14,218,234,0.2)]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0 delay-150">
               </div>
@@ -282,7 +264,8 @@
           <div
             class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
             <!-- Front Face -->
-            <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
+            <!-- Cara Frontal -->
+            <div class="bento-card-front p-[2px]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0">
               </div>
@@ -299,11 +282,10 @@
                   aplicarlos en algo real.</p>
               </div>
             </div>
-            <!-- Back Face -->
-            <div
-              class="absolute inset-0 backface-hidden rotate-y-180 rounded-[2rem] overflow-hidden p-[2px] shadow-[0_0_30px_rgba(0,170,255,0.2)]">
+            <!-- Cara Trasera -->
+            <div class="bento-card-back p-[2px] shadow-[0_0_30px_rgba(0,170,255,0.2)]">
               <div
-                class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#00aaff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0 delay-150">
+                class="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#00aaff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0 delay-150">
               </div>
               <div
                 class="relative w-full h-full bg-gradient-to-br from-[#0a0f28] to-[#010147] rounded-[calc(2rem-2px)] p-6 flex flex-col justify-center items-center text-center overflow-hidden z-10 border border-white/5">
@@ -324,8 +306,8 @@
         <div class="bento-card group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-1">
           <div
             class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-            <!-- Front Face -->
-            <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
+            <!-- Cara Frontal -->
+            <div class="bento-card-front p-[2px]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0">
               </div>
@@ -344,9 +326,8 @@
                   y no sé cómo avanzar.</p>
               </div>
             </div>
-            <!-- Back Face -->
-            <div
-              class="absolute inset-0 backface-hidden rotate-y-180 rounded-[2rem] overflow-hidden p-[2px] shadow-[0_0_30px_rgba(173,0,255,0.2)]">
+            <!-- Cara Trasera -->
+            <div class="bento-card-back p-[2px] shadow-[0_0_30px_rgba(173,0,255,0.2)]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0 delay-150">
               </div>
@@ -369,8 +350,8 @@
         <div class="bento-card group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-2">
           <div
             class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-            <!-- Front Face -->
-            <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
+            <!-- Cara Frontal -->
+            <div class="bento-card-front p-[2px]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0">
               </div>
@@ -387,9 +368,8 @@
                   cosas que aún no domino.</p>
               </div>
             </div>
-            <!-- Back Face -->
-            <div
-              class="absolute inset-0 backface-hidden rotate-y-180 rounded-[2rem] overflow-hidden p-[2px] shadow-[0_0_30px_rgba(14,218,234,0.2)]">
+            <!-- Cara Trasera -->
+            <div class="bento-card-back p-[2px] shadow-[0_0_30px_rgba(14,218,234,0.2)]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0 delay-150">
               </div>
