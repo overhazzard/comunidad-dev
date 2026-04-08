@@ -119,4 +119,28 @@ function copyYapeNumber() {
         }
     });
 }
-// Bento Grid gestionado nativamente por CSS 3D. No requiere JS!
+
+// Interactividad para Bento Grid (Volteo en móviles)
+document.addEventListener("DOMContentLoaded", () => {
+    const bentoCards = document.querySelectorAll('.bento-card');
+
+    bentoCards.forEach(card => {
+        card.addEventListener('click', function () {
+            const inner = this.querySelector('.bento-card-inner');
+            if (!inner) return;
+
+            // Si la tarjeta ya está volteada, la cerramos
+            if (inner.classList.contains('is-flipped')) {
+                inner.classList.remove('is-flipped');
+            } else {
+                // Cerramos cualquier otra tarjeta abierta para una mejor UX
+                bentoCards.forEach(c => {
+                    const otherInner = c.querySelector('.bento-card-inner');
+                    if (otherInner) otherInner.classList.remove('is-flipped');
+                });
+                // Abrimos la tarjeta actual
+                inner.classList.add('is-flipped');
+            }
+        });
+    });
+});

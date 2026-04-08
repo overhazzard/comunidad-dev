@@ -41,6 +41,25 @@
     }
   </script>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Soporte para volteo táctil en móviles */
+    .bento-card-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+  </style>
 </head>
 
 <body class="antialiased min-h-screen flex flex-col items-center overflow-x-hidden">
@@ -218,9 +237,9 @@
           puedes solucionarlo con la guía y el apoyo correcto.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start min-h-[400px]">
-        <div class="group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-2">
+        <div class="bento-card group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-2">
           <div
-            class="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+            class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
             <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
               <div
                 class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0EDAEA_0%,#ad00ff_50%,#0EDAEA_100%)] opacity-30 group-hover:opacity-100 transition-opacity duration-300 z-0">
@@ -259,9 +278,9 @@
         </div>
 
         <!-- Tarjeta Bento 2 (Span 1) -->
-        <div class="group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-1">
+        <div class="bento-card group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-1">
           <div
-            class="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+            class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
               <div
@@ -302,9 +321,9 @@
         </div>
 
         <!-- Tarjeta Bento 3 (Span 1) -->
-        <div class="group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-1">
+        <div class="bento-card group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-1">
           <div
-            class="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+            class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
               <div
@@ -347,9 +366,9 @@
         </div>
 
         <!-- Tarjeta Bento 4 (Span 2) -->
-        <div class="group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-2">
+        <div class="bento-card group perspective-1000 w-full h-[280px] md:h-[320px] cursor-pointer md:col-span-2">
           <div
-            class="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+            class="bento-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
             <!-- Front Face -->
             <div class="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden p-[2px]">
               <div
