@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
-body {
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
     font-family: 'DM Sans', sans-serif;
     background-color: #0b0f2f;
     background-image: radial-gradient(circle at 15% 50%, rgba(14, 218, 234, 0.08), transparent 25%),
@@ -71,6 +74,13 @@ h6,
     display: inline-flex;
     width: max-content;
     animation: marquee 35s linear infinite;
+    will-change: transform;
+}
+
+/* Contenedor de seguridad para overflow */
+.marquee-container {
+    overflow: hidden;
+    width: 100%;
 }
 
 /* Ocultar flecha nativa de summary para el F.A.Q */
@@ -120,17 +130,19 @@ details>summary::-webkit-details-marker {
     animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Soporte para volteo táctil y corrección de inversión de texto */
+/* Soporte para volteo táctil y corrección de inversión de texto (Optimizado para Safari/iOS) */
 .bento-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 
 .bento-card-inner.is-flipped {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
 .bento-card-front,
@@ -143,10 +155,18 @@ details>summary::-webkit-details-marker {
     -webkit-backface-visibility: hidden;
     border-radius: 2rem;
     overflow: hidden;
+    /* Fuerza a Safari a crear capas separadas */
+    transform: translateZ(1px);
+    -webkit-transform: translateZ(1px);
+}
+
+.bento-card-front {
+    z-index: 2;
 }
 
 .bento-card-back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
+    -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 
 .perspective-1000 {
