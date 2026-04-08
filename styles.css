@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0b0f2f;
+    background-image: radial-gradient(circle at 15% 50%, rgba(14, 218, 234, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(173, 0, 255, 0.08), transparent 25%);
+    color: #f8fafc;
+}
+
+/* Override global para la fuente de encabezados (Opción 2: Outfit) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn-gradient {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(14, 218, 234, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(14, 218, 234, 0.2);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #0EDAEA, #ad00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient {
+    background: linear-gradient(90deg, #0EDAEA, #ad00ff);
+    background-size: 200% auto;
+    transition: 0.5s;
+}
+
+.btn-gradient:hover {
+    background-position: right center;
+    box-shadow: 0 0 20px rgba(173, 0, 255, 0.4);
+}
+
+.bg-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Marquee Animation para el Tech Stack */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: inline-flex;
+    width: max-content;
+    animation: marquee 35s linear infinite;
+}
+
+/* Ocultar flecha nativa de summary para el F.A.Q */
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 3D Transform Utilities para Bento Grid Flip Cards */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-style-3d {
+    transform-style: preserve-3d;
+}
+
+.backface-hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* Conexión manual del Group-Hover de Tailwind con la clase custom 3D */
+.group:hover .group-hover\:rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* --- Animación de Latido Neón (Pulse Glow) --- */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(173, 0, 255, 0.1);
+        border-color: rgba(173, 0, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(173, 0, 255, 0.7), inset 0 0 10px rgba(173, 0, 255, 0.2);
+        border-color: rgba(173, 0, 255, 0.8);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
